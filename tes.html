@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siapa itu Vinny? 🤔</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes bounce-cute {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(3deg); }
+            75% { transform: rotate(-3deg); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .bounce-cute { animation: bounce-cute 2s infinite; }
+        .wiggle { animation: wiggle 0.5s ease-in-out; }
+        .fade-in-up { animation: fadeInUp 0.6s ease-out; }
+        .gradient-text {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-pink-100 via-purple-50 to-blue-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="text-center mb-12 fade-in-up">
+            <h1 class="text-6xl font-bold gradient-text mb-4">Sape tu Vinny?</h1>
+            <p class="text-2xl text-gray-600">🤔 Kita kasi understand dulu gasi</p>
+        </div>
+
+        <!-- Mystery Box -->
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-3xl shadow-2xl p-8 mb-8 transform hover:scale-105 transition-all duration-300">
+                <div class="text-center">
+                    <div class="text-8xl mb-4 bounce-cute">🎭</div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Jom Cari Tau!</h2>
+                    <button onclick="revealVinny()" id="revealBtn" class="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-4 rounded-full text-xl font-bold hover:from-pink-600 hover:to-purple-700 transform hover:scale-110 transition-all duration-300 shadow-lg">
+                        Siapa sih Vinny itu? 🕵️‍♀️
+                    </button>
+                </div>
+            </div>
+
+            <!-- Vinny Introduction (Hidden initially) -->
+            <div id="vinnyIntro" class="hidden">
+                <div class="bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 rounded-3xl p-8 mb-8 text-white shadow-2xl">
+                    <div class="text-center mb-8">
+                        <div class="text-6xl mb-4">👑</div>
+                        <h2 class="text-4xl font-bold mb-4">She is Princess Vinny!</h2>
+                        <p class="text-xl opacity-90">Di antara ribuan bintang yang bersinar, <br>
+                            hanya satu yang mampu menenangkan jiwa — dia, Princess Vinny. <br><br>
+                        
+                            Senyumnya lembut, seperti embun pagi yang jatuh perlahan. <br>
+                            Tatapannya, teduh bagai langit setelah hujan reda. <br><br>
+                        
+                            Langkahnya tenang, namun meninggalkan jejak kehangatan. <br>
+                            Ucapannya halus, menyentuh hati tanpa paksaan. <br><br>
+                        
+                            Ia bukan hanya cantik di wajah, <br>
+                            namun juga di hati, dalam tutur, dan dalam cara mencinta. <br><br>
+                        
+                            Princess Vinny, sang jelita yang tak sekadar indah — <br>
+                            ia adalah kisah yang ingin terus kuceritakan. <br><br>
+
+                            <b>(Amboii Seperti nya me sudah bisa jadi penyair nih)</b>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="text-center">
+                            <div class="text-4xl mb-3">💕</div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">A Heart Already Claimed</h3>
+<p class="text-pink-600 font-medium">This heart beats only for Repan <b>(Anjai Ezegedew)</b></p>
+
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="text-center">
+                            <div class="text-4xl mb-3">🌟</div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Level Keimupan Yagesya</h3>
+                            <p class="text-purple-600 font-semibold">Over 9000! ✨ Lebih pun mungkin soalnya imup bgt njim</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="text-center">
+                            <div class="text-4xl mb-3">🎭</div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Berotak Sengku</h3>
+<p class="text-blue-600 font-medium">Bcs she bukan hanya menawan tapi juga sangat pintar dan cerdas</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fun Facts -->
+                <div class="bg-white rounded-3xl p-8 mb-8 shadow-2xl">
+                    <h3 class="text-3xl font-extrabold text-center mb-6 text-gray-800">Little Things About Her ✨</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center p-4 bg-pink-50 rounded-xl">
+                            <span class="text-2xl mr-4">🫣</span>
+                            <p class="text-lg text-gray-700">She carries a quiet kind of magic and soft, yet unforgettable</p>
+                        </div>
+                        <div class="flex items-center p-4 bg-purple-50 rounded-xl">
+                            <span class="text-2xl mr-4">🌷</span>
+                            <p class="text-lg text-gray-700">Her smile feels like spring after a long winter</p>
+                        </div>
+                        <div class="flex items-center p-4 bg-blue-50 rounded-xl">
+                            <span class="text-2xl mr-4">🧠</span>
+                            <p class="text-lg text-gray-700">She hides her storms well, yet her heart is the warmest place</p>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+                <!-- Meme Section -->
+                <div class="bg-gradient-to-r from-yellow-400 to-orange-400 rounded-3xl p-8 mb-8 shadow-2xl">
+                    <h3 class="text-3xl font-bold text-center mb-6 text-white">Random Je ni</h3>
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-white rounded-2xl p-6 text-center">
+                            <div class="text-6xl mb-4">😹</div>
+                            <p class="text-lg font-semibold">"Ayo Ganyang Fufufafa"</p>
+                            <p class="text-sm text-gray-600">Wi wok de tok not onli tok de tok</p>
+                        </div>
+                        <div class="bg-white rounded-2xl p-6 text-center">
+                            <div class="text-6xl mb-4">🕵️‍♀️</div>
+                            <p class="text-lg font-semibold">"Hy Manis"</p>
+                            <p class="text-sm text-gray-600">- Shezzhh Rizz Bgt Gweh</p>
+                        </div>
+                    </div>
+                    
+                    
+                    <!-- Meme Image Gallery -->
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-white rounded-2xl p-4 text-center transform hover:scale-105 transition-all duration-300">
+                            <div class="w-full h-48 rounded-xl mb-3 overflow-hidden shadow-lg">
+                                <img src="./img/g1.jpeg" alt="Meme Vinny #1" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" onerror="this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-pink-200 to-purple-200 flex items-center justify-center text-gray-500\'><div class=\'text-center\'><div class=\'text-4xl mb-2\'>🖼️</div><p>Meme Loading...</p></div></div>'">
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl p-4 text-center transform hover:scale-105 transition-all duration-300">
+                            <div class="w-full h-48 rounded-xl mb-3 overflow-hidden shadow-lg">
+                                <img src="./img/g2.jpeg" alt="Meme Vinny #2" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" onerror="this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-pink-200 to-purple-200 flex items-center justify-center text-gray-500\'><div class=\'text-center\'><div class=\'text-4xl mb-2\'>🖼️</div><p>Meme Loading...</p></div></div>'">
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl p-4 text-center transform hover:scale-105 transition-all duration-300">
+                            <div class="w-full h-48 rounded-xl mb-3 overflow-hidden shadow-lg">
+                                <img src="./img/g3.jpeg" alt="Meme Vinny #3" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300" onerror="this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-pink-200 to-purple-200 flex items-center justify-center text-gray-500\'><div class=\'text-center\'><div class=\'text-4xl mb-2\'>🖼️</div><p>Meme Loading...</p></div></div>'">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Love Message -->
+                <div class="bg-gradient-to-r from-red-400 via-pink-400 to-purple-400 rounded-3xl p-8 text-white text-center shadow-2xl">
+                    <div class="text-6xl mb-4"></div>
+                    <h3 class="text-3xl font-bold mb-4">Just A Message</h3>
+                    <p class="text-xl mb-4">"Hy Manis sehat sehat yo,</p>
+                    <p class="text-xl mb-4">luv u sm, muahmuah."</p>
+                </div>
+
+                <!-- Mini Game -->
+                <div class="bg-white rounded-3xl p-8 mb-8 shadow-2xl">
+                    <h3 class="text-3xl font-bold text-center mb-6 text-gray-800">Mini Game: Catch the Hearts! 💕</h3>
+                    <div class="text-center mb-6">
+                        <p class="text-lg text-gray-600 mb-4">jom tangkap hati nya banyak banyak!</p>
+                        <div class="mb-4">
+                            <span class="text-xl font-bold">Score: </span>
+                            <span id="gameScore" class="text-2xl font-bold text-pink-600">0</span>
+                        </div>
+                    </div>
+                    
+                    <div id="gameArea" class="relative bg-gradient-to-b from-pink-100 to-purple-100 rounded-2xl h-80 overflow-hidden border-4 border-pink-300 mx-auto max-w-md">
+                        <!-- Game Character (Vinny) -->
+                        <div id="gameChar" class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-4xl cursor-pointer transition-all duration-100">
+                            👩‍💼
+                        </div>
+                        
+                        <!-- Game Controls -->
+                        <div class="absolute bottom-2 left-2 right-2 flex justify-between">
+                            <button onclick="moveLeft()" class="bg-pink-500 text-white p-2 rounded-full hover:bg-pink-600 transition-colors">
+                                ⬅️
+                            </button>
+                            <button onclick="moveRight()" class="bg-pink-500 text-white p-2 rounded-full hover:bg-pink-600 transition-colors">
+                                ➡️
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-6 space-x-4">
+                        <button onclick="startGame()" id="startBtn" class="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-3 rounded-full font-bold hover:scale-110 transition-all duration-300">
+                            Start Game! 🎮
+                        </button>
+                        <button onclick="stopGame()" id="stopBtn" class="bg-gradient-to-r from-red-400 to-red-600 text-white px-6 py-3 rounded-full font-bold hover:scale-110 transition-all duration-300 hidden">
+                            Stop Game 🛑
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Interactive Buttons -->
+                <div class="text-center mt-8 space-x-4">
+                    <button onclick="showSurprise()" class="bg-gradient-to-r from-green-400 to-blue-500 text-white px-6 py-3 rounded-full font-bold hover:scale-110 transition-all duration-300">
+                        Surprise! 🎁
+                    </button>
+                    <button onclick="wiggleAll()" class="bg-gradient-to-r from-yellow-400 to-red-500 text-white px-6 py-3 rounded-full font-bold hover:scale-110 transition-all duration-300">
+                        Wiggle Time! 🕺
+                    </button>
+                </div>
+            </div>
+
+            <!-- Surprise Message (Hidden initially) -->
+            <div id="surpriseMsg" class="hidden mt-8">
+                <div class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-3xl p-8 text-white text-center shadow-2xl transform scale-95 hover:scale-100 transition-all duration-500">
+                    <div class="text-8xl mb-4">🎉</div>
+                    <h3 class="text-4xl font-bold mb-4">SURPRISE!</h3>
+                    <p class="text-2xl mb-4">Sekarang udah tau kan siapa Vinny? 😄</p>
+                    <p class="text-xl">Jangan pura-pura gak kenal lagi ya! 😘</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Game variables
+        let gameScore = 0;
+        let gameRunning = false;
+        let gameInterval;
+        let charPosition = 50; // percentage from left
+        let hearts = [];
+
+        function revealVinny() {
+            const intro = document.getElementById('vinnyIntro');
+            const btn = document.getElementById('revealBtn');
+            
+            btn.textContent = '🎉 Tadaaa!';
+            btn.classList.add('wiggle');
+            
+            setTimeout(() => {
+                intro.classList.remove('hidden');
+                intro.classList.add('fade-in-up');
+                btn.style.display = 'none';
+            }, 500);
+        }
+
+        function showSurprise() {
+            const surprise = document.getElementById('surpriseMsg');
+            surprise.classList.remove('hidden');
+            surprise.classList.add('fade-in-up');
+            
+            // Add confetti effect
+            for(let i = 0; i < 50; i++) {
+                createConfetti();
+            }
+        }
+
+        function wiggleAll() {
+            const elements = document.querySelectorAll('.bg-white, .bg-gradient-to-r');
+            elements.forEach(el => {
+                el.classList.add('wiggle');
+                setTimeout(() => el.classList.remove('wiggle'), 500);
+            });
+        }
+
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.innerHTML = ['🎉', '💖', '✨', '🌟', '💕'][Math.floor(Math.random() * 5)];
+            confetti.style.position = 'fixed';
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.top = '-10px';
+            confetti.style.fontSize = '2rem';
+            confetti.style.pointerEvents = 'none';
+            confetti.style.zIndex = '1000';
+            
+            document.body.appendChild(confetti);
+            
+            const animation = confetti.animate([
+                { transform: 'translateY(0px) rotate(0deg)', opacity: 1 },
+                { transform: `translateY(${window.innerHeight + 100}px) rotate(720deg)`, opacity: 0 }
+            ], {
+                duration: 3000,
+                easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+            });
+            
+            animation.onfinish = () => confetti.remove();
+        }
+
+        // Game Functions
+        function startGame() {
+            if (gameRunning) return;
+            
+            gameRunning = true;
+            gameScore = 0;
+            hearts = [];
+            charPosition = 50;
+            
+            document.getElementById('gameScore').textContent = gameScore;
+            document.getElementById('startBtn').classList.add('hidden');
+            document.getElementById('stopBtn').classList.remove('hidden');
+            
+            updateCharPosition();
+            
+            // Spawn hearts every 2 seconds
+            gameInterval = setInterval(spawnHeart, 2000);
+            
+            // Game loop
+            gameLoop();
+        }
+
+        function stopGame() {
+            gameRunning = false;
+            clearInterval(gameInterval);
+            
+            // Clear all hearts
+            hearts.forEach(heart => {
+                if (heart.element && heart.element.parentNode) {
+                    heart.element.parentNode.removeChild(heart.element);
+                }
+            });
+            hearts = [];
+            
+            document.getElementById('startBtn').classList.remove('hidden');
+            document.getElementById('stopBtn').classList.add('hidden');
+            
+            if (gameScore > 0) {
+                setTimeout(() => {
+                    alert(`🎉 Great job! Vinny berhasil dapat ${gameScore} hati! 💕`);
+                }, 100);
+            }
+        }
+
+        function spawnHeart() {
+            if (!gameRunning) return;
+            
+            const gameArea = document.getElementById('gameArea');
+            const heart = document.createElement('div');
+            heart.innerHTML = '💕';
+            heart.style.position = 'absolute';
+            heart.style.fontSize = '2rem';
+            heart.style.left = Math.random() * 70 + 15 + '%';
+            heart.style.top = '0px';
+            heart.style.pointerEvents = 'none';
+            heart.style.zIndex = '10';
+            
+            gameArea.appendChild(heart);
+            
+            const heartObj = {
+                element: heart,
+                x: parseFloat(heart.style.left),
+                y: 0,
+                speed: 2
+            };
+            hearts.push(heartObj);
+        }
+
+        function gameLoop() {
+            if (!gameRunning) return;
+            
+            // Move hearts down and check collisions
+            hearts.forEach((heart, index) => {
+                if (!heart.element || !heart.element.parentNode) {
+                    hearts.splice(index, 1);
+                    return;
+                }
+                
+                heart.y += heart.speed;
+                heart.element.style.top = heart.y + 'px';
+                
+                // Check collision with character (character is at bottom ~250px)
+                if (heart.y > 220 && heart.y < 260) {
+                    const heartX = heart.x;
+                    const charX = charPosition;
+                    
+                    // Check if character catches the heart (wider collision area)
+                    if (Math.abs(charX - heartX) < 12) {
+                        // Collision detected!
+                        gameScore++;
+                        document.getElementById('gameScore').textContent = gameScore;
+                        
+                        // Remove heart
+                        heart.element.parentNode.removeChild(heart.element);
+                        hearts.splice(index, 1);
+                        
+                        // Visual feedback
+                        createFloatingScore();
+                        return;
+                    }
+                }
+                
+                // Remove hearts that fall off screen
+                if (heart.y > 320) {
+                    heart.element.parentNode.removeChild(heart.element);
+                    hearts.splice(index, 1);
+                }
+            });
+            
+            if (gameRunning) {
+                requestAnimationFrame(gameLoop);
+            }
+        }
+
+        function createFloatingScore() {
+            const gameArea = document.getElementById('gameArea');
+            const scoreElement = document.createElement('div');
+            scoreElement.innerHTML = '+1 💕';
+            scoreElement.style.position = 'absolute';
+            scoreElement.style.left = charPosition + '%';
+            scoreElement.style.bottom = '80px';
+            scoreElement.style.fontSize = '1.5rem';
+            scoreElement.style.fontWeight = 'bold';
+            scoreElement.style.color = '#ec4899';
+            scoreElement.style.pointerEvents = 'none';
+            scoreElement.style.transform = 'translateX(-50%)';
+            scoreElement.style.transition = 'all 1s ease-out';
+            
+            gameArea.appendChild(scoreElement);
+            
+            setTimeout(() => {
+                scoreElement.style.bottom = '120px';
+                scoreElement.style.opacity = '0';
+            }, 100);
+            
+            setTimeout(() => {
+                if (scoreElement.parentNode) {
+                    scoreElement.parentNode.removeChild(scoreElement);
+                }
+            }, 1100);
+        }
+
+        function moveLeft() {
+            if (!gameRunning) return;
+            charPosition = Math.max(10, charPosition - 15);
+            updateCharPosition();
+        }
+
+        function moveRight() {
+            if (!gameRunning) return;
+            charPosition = Math.min(90, charPosition + 15);
+            updateCharPosition();
+        }
+
+        function updateCharPosition() {
+            const char = document.getElementById('gameChar');
+            char.style.left = charPosition + '%';
+        }
+
+        // Keyboard controls
+        document.addEventListener('keydown', (e) => {
+            if (!gameRunning) return;
+            if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') {
+                moveLeft();
+            } else if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') {
+                moveRight();
+            }
+        });
+
+        // Auto wiggle every 5 seconds
+        setInterval(() => {
+            const randomElement = document.querySelector('.bounce-cute');
+            if(randomElement) {
+                randomElement.classList.add('wiggle');
+                setTimeout(() => randomElement.classList.remove('wiggle'), 500);
+            }
+        }, 5000);
+    </script>
+</body>
+</html>
